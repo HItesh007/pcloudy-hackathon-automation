@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Hackathon - Local Test Suite" parallel="tests">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener" />
+    </listeners>
+    <test name="Hackathon Local Test - Moto G5s Plus">
+        <parameter name="device-name" value="Moto G5s Plus"/>
+        <parameter name="platform-name" value="Android"/>
+        <parameter name="platform-version" value="7.1.1"/>
+        <parameter name="udid" value="ZY322JJLX7"/>
+        <parameter name="automation-name" value="UiAutomator2"/>
+        <parameter name="app-package" value="com.google.android.calculator"/>
+        <parameter name="app-activity" value="com.android.calculator2.Calculator"/>
+        <parameter name="wda-system-port" value="8201"/>
+        <classes>
+            <class name="com.hackathon.pCloudy.base.AppiumBase"/>
+            <class name="com.hackathon.pCloudy.tests.LocalEnvironmentCheckTests"/>
+        </classes>
+    </test>
+</suite>

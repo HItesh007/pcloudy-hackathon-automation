@@ -64,6 +64,7 @@
         <faker.version>1.0.2</faker.version>
         <jfairy.version>0.6.4</jfairy.version>
         <java.tupple.version>1.2</java.tupple.version>
+        <restassured.version>4.2.0</restassured.version>
     </properties>
 
     <dependencies>
@@ -212,6 +213,13 @@
             <groupId>com.devskiller</groupId>
             <artifactId>jfairy</artifactId>
             <version>${jfairy.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
         </dependency>
     </dependencies>
 

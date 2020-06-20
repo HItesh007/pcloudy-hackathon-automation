@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="com.epam.ta.reportportal.log4j.appender" status="error">
+    <Properties>
+        <Property name="LOG_DIR_PATH">automation-logs</Property>
+        <Property name="LOG_FILE_NAME">automation-script-log</Property>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss} [%t] [%-5p] (%F:%L) - [%X{DEVICE_NAME}] - %m%n</Property>
+    </Properties>
+    <Appenders>
+        <!-- Following appender is used to display logs in console. -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>${LOG_PATTERN}</pattern>
+            </PatternLayout>
+        </Console>
+
+        <!-- Following appender is used to add logs from log4j2 to ReportPortal. -->
+        <ReportPortalLog4j2Appender name="ReportPortalAppender">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </ReportPortalLog4j2Appender>
+
+        <!-- Following appender will be used to write logs to file -->
+        <!--<RollingFile
+                name="RollingFile"
+                fileName="${LOG_DIR_PATH}/${date:dd-MM-yyyy}/${LOG_FILE_NAME}-${date:dd-MM-yyyy-HH.mm.ss}.log"
+                filePattern="${LOG_DIR_PATH}/${date:dd-MM-yyyy}/${LOG_FILE_NAME}-${date:dd-MM-yyyy-HH.mm.ss}-%i.log.gz"
+                ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>-->
+
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.hackathon.pCloudy" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ReportPortalAppender"/>
+            <!--<AppenderRef ref="RollingFile"/>-->
+        </Logger>
+        <!-- Commenting root logger so that Log4j2 won't log details to file from external libraries -->
+        <!--<Root level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="ReportPortalAppender"/>
+        </Root>-->
+    </Loggers>
+</Configuration>
