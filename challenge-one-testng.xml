@@ -3,7 +3,9 @@
 
 <suite name="Hackathon - Challenge One Suite">
     <test name="Hackathon - Challenge One Test">
+        <parameter name="browser-name" value="chrome"/>
         <classes>
+            <class name="com.hackathon.pCloudy.tests.challengeFive.ParallelSetup" />
             <class name="com.hackathon.pCloudy.tests.challangeOne.ChallengeOneTests"/>
         </classes>
     </test>
