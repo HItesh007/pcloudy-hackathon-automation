@@ -1,7 +1,5 @@
 package com.hackathon.pCloudy.tests.challangeOne;
 
-import com.hackathon.pCloudy.base.SeleniumBase;
-import com.hackathon.pCloudy.enums.Browser;
 import com.hackathon.pCloudy.pages.CPSatExamHomePage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,8 +11,6 @@ public class ChallengeOneTests {
     @Test(priority = 0)
     public void challengeOneProblemA() {
         try {
-            SeleniumBase seleniumBase = new SeleniumBase();
-            seleniumBase.initBrowser(Browser.Chrome);
 
             CPSatExamHomePage homePage = new CPSatExamHomePage();
             String tamilToEng = homePage
@@ -42,7 +38,6 @@ public class ChallengeOneTests {
             System.out.println("\n----------------- Following Is Translated From FRENCH -----------------\n");
             System.out.println(frenchToEn);
 
-            seleniumBase.closeBrowser();
 
         } catch (Exception ex) {
             logger.error(ex.getMessage(), ex);
