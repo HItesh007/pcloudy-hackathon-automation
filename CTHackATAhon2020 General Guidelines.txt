@@ -1,0 +1,95 @@
+
+
+#CTHackATAhon2020 
+
+
+ 
+
+Welcome to the #CTHackATAhon2020 
+
+ 
+
+This document is intended for all the participants of #CTHackATAhon2020 and covers the details 
+for the main 5-hour event for 20th June 2020. 
+
+The event starts at 2 PM and ends at 7 PM. 
+
+Timeline 
+
+2PM-3PM: Setup | Getting ready. We will be sharing a GITlab plain code repo. You will have to 
+clone it or fork it to create your own repository and connect with your Jenkins server. 
+
+3PM-7PM: Actual Hackathon. 
+
+ 
+
+
+General Guidelines 
+
+
+ 
+
+All participants are requested 
+
+1. To keep themselves on mute. If you have any queries. Please share in the chat. 
+2. To keep their videos on from 3 PM to 7 PM 
+3. Jury can randomly request any participant to share the screen. This means you have to 
+be keeping your session on MS Teams on all the time 
+4. Please note that all the code that is used, must be pushed to your own GIT repository by 
+7 PM IST, any code which is pushed after 7 PM will not be considered accepted. 
+5. Please ensure you complete your setup (Gitbash on windows, GIT on other platforms, 
+Jenkins before 3 PM). Any delays will lead you to lose your 4-hour time. 
+6. Please ensure you know how to create your own repository and push the code 
+7. You are free to use internet for downloading or using any tools or code. 
+8. If your code is found to be same as that of any other participant(s), it may result in 
+disqualification for all the participants who are found to be guilty of copying 
+9. We will be sharing the challenge 5 minutes before 3 PM. The server will be up during the 
+3PM to 7PM window. Server will be brought down at exactly 7:15 PM. 
+10. You have to fill in a self-evaluation sheet (template will be provided) and also prepare a 
+video showcasing your solution. The sheet and the video need to be shared by 7:25 PM. 
+Any emails received after 7:25 PM will result in negative marking. 
+
+
+ 
+
+ 
+
+Challenge will have the following 
+components 
+
+
+ 
+
+Setup other than your own test and test automation tools that we recommend are 
+
+• Gitlab/Github/Bitbucket account 
+• Jenkins server or any other CI server 
+
+
+ 
+
+
+• Plain text code base will be given. That should be used to hook up the CI tool. No 
+compilation of code or files will be needed. It will be used only for firing the tests. 
+• On code checkin / or git push it should fire jobs on the CI Tools 
+• Use case on API Testing, UI and Functional Testing on multiple browsers, Mobile use case 
+on different devices, Reporting and other use cases may be there (which can be 
+considered a part of CT). For each of the use cases you may have to create jobs on 
+Jenkins and create a CT pipeline so that the jobs run on pushing changes in the git repo. 
+
+
+ 
+
+Good luck. 
+
+Have fun and happy learning 
+
+ 
+
+Thanks from the entire Jury Team 
+
+ 
+
+ 
+
+

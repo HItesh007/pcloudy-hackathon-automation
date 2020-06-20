@@ -1,0 +1,18 @@
+/.idea/
+/automation-script-logs/
+/target/
+/execution-screenshot/*
+/.settings/*
+/test-output/*
+
+
+## --- FILES
+*.log
+*.class
+*.zip
+.classpath
+.factorypath
+.project
+*.iml
+*.lock
+*.sync
