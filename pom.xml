@@ -20,6 +20,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>challenge-zero-tesng.xml</suiteXmlFile>
                         <suiteXmlFile>challenge-one-testng.xml</suiteXmlFile>
+                        <suiteXmlFile>challenge-five-problem-one.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
