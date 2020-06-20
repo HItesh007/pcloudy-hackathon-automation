@@ -24,8 +24,10 @@ public class ApiChallengeTests {
     private static final Logger logger = LogManager.getLogger(ApiChallengeTests.class.getName());
     private static final String API_BASE_URI = "http://35.188.114.237:8088/api/v2";
 
+
     @Test(priority = 0)
     public void challengeZeroProblemA() {
+        System.out.println("\n------------------ STARTING PRINTING ID TEST ----------------------\n");
         try {
             RestAssured.baseURI = API_BASE_URI;
 
@@ -50,6 +52,7 @@ public class ApiChallengeTests {
 
     @Test(priority = 1)
     public void challengeZeroProblemB() {
+        System.out.println("\n------------------ STARTING ADD/UPDATE/DELETE USER TEST ----------------------\n");
         try {
 
             RestAssured.baseURI = API_BASE_URI;
@@ -82,6 +85,7 @@ public class ApiChallengeTests {
             // Get ID
             int primaryKey = responseObject.getInt("id");
 
+            System.out.println("User Added -> Response Body : " + response.asString());
             //endregion
 
             //region Update User
@@ -106,6 +110,8 @@ public class ApiChallengeTests {
             // Assert the response code for Add user API Call
             Assert.assertEquals(updateResponse.getStatusCode(), 200);
 
+            System.out.println("User Updated -> Response Body : " + updateResponse.asString());
+
             //endregion
 
             //region Delete User
@@ -114,6 +120,8 @@ public class ApiChallengeTests {
 
             // Assert the response code for Add user API Call
             Assert.assertEquals(deleteResponse.getStatusCode(), 200);
+
+            System.out.println("User Deleted -> Response Body : " + deleteResponse.asString());
             //endregion
 
             //region Negative Delete Test Case
@@ -122,6 +130,8 @@ public class ApiChallengeTests {
 
             // Assert that it's not available in dB
             Assert.assertEquals(negativeDeleteResponse.getStatusCode(), 404);
+
+            System.out.println("User Deleted (Negative Case) -> Response Body : " + negativeDeleteResponse.asString());
             //endregion
 
         } catch (Exception ex) {
@@ -131,6 +141,7 @@ public class ApiChallengeTests {
 
     @Test(priority = 2)
     public void challengeZeroProblemC() {
+        System.out.println("\n------------------ STARTING ADD/DELETE USER AND VERIFY WEB TEST ----------------------\n");
         try {
             RestAssured.baseURI = API_BASE_URI;
 
@@ -161,6 +172,9 @@ public class ApiChallengeTests {
 
             // Get ID
             int primaryKey = responseObject.getInt("id");
+
+
+            System.out.println("User Added -> Response Body : " + response.asString());
             //endregion
 
             // Switch to Web And Get ID
@@ -212,6 +226,8 @@ public class ApiChallengeTests {
             }
 
             Assert.assertEquals(isFound, false);
+
+            System.out.println("Deleted User Not Found On Web");
 
             // Close the browser
             seleniumBase.closeBrowser();

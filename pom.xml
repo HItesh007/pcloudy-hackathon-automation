@@ -18,7 +18,8 @@
                 <configuration>
                     <!-- Suite testng xml file to consider for test execution -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>client-device-level-runner.xml</suiteXmlFile>
+                        <suiteXmlFile>challenge-zero-tesng.xml</suiteXmlFile>
+                        <suiteXmlFile>challenge-one-testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
