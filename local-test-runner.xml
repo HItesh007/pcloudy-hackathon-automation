@@ -16,7 +16,7 @@
         <parameter name="wda-system-port" value="8201"/>
         <classes>
             <class name="com.hackathon.pCloudy.base.AppiumBase"/>
-            <class name="com.hackathon.pCloudy.tests.LocalEnvironmentCheckTests"/>
+            <class name="com.hackathon.pCloudy.tests.playground.LocalEnvironmentCheckTests"/>
         </classes>
     </test>
 </suite>
