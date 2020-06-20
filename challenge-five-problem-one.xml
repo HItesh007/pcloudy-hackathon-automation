@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Hackathon - Cross Browser Testing Suite" parallel="tests" thread-count="2">
+    <test name="Hackathon - Chrome Test">
+        <parameter name="browser-name" value="chrome"/>
+        <classes>
+            <class name="com.hackathon.pCloudy.tests.challengeFive.ParallelSetup" />
+            <class name="com.hackathon.pCloudy.tests.challangeOne.ChallengeOneTests"/>
+        </classes>
+    </test>
+
+    <test name="Hackathon - Firefox Test">
+        <parameter name="browser-name" value="firefox"/>
+        <classes>
+            <class name="com.hackathon.pCloudy.tests.challengeFive.ParallelSetup" />
+            <class name="com.hackathon.pCloudy.tests.challangeOne.ChallengeOneTests"/>
+        </classes>
+    </test>
+</suite>
