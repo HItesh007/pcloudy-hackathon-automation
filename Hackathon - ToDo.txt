@@ -1,0 +1,25 @@
+---- Tech Stacks --------
+1. Java
+2. TestNG
+3. Maven
+4. ReportPortal
+5. Azure DevOps
+6. RestAssured
+7. Selenium
+8. Appium
+
+http://demo.guru99.com/test/flash-testing.html
+----------- Practice Challenges --------
+1. Broken Link Test
+2. Drag & Drop, Move slider
+3. Social Media message verification
+4. Individual field validation for a form using excel
+5. API Testing using RestAssured
+6. Visual Testing using Ocular
+7. Localization Test.
+8. Reporting using ReportPortal
+
+
+-------------- Links ----------------------
+https://github.com/vinsguru/ocular
+https://www.dynatrace.com/resources/ebooks/javabook/performance-in-continuous-integration/
