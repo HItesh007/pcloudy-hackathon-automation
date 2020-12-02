@@ -67,6 +67,7 @@
         <jfairy.version>0.6.4</jfairy.version>
         <java.tupple.version>1.2</java.tupple.version>
         <restassured.version>4.2.0</restassured.version>
+        <ocular.version>1.0.0.Alpha</ocular.version>
     </properties>
 
     <dependencies>
@@ -222,6 +223,14 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${restassured.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.testautomationguru.ocular/ocular -->
+        <!-- Visual Testing Tool : https://github.com/vinsguru/ocular -->
+        <dependency>
+            <groupId>com.testautomationguru.ocular</groupId>
+            <artifactId>ocular</artifactId>
+            <version>${ocular.version}</version>
         </dependency>
     </dependencies>
 
