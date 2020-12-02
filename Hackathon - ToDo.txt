@@ -3,23 +3,33 @@
 2. TestNG
 3. Maven
 4. ReportPortal
-5. Azure DevOps
+5. Azure DevOps/Jenkins CI
 6. RestAssured
 7. Selenium
 8. Appium
 
-http://demo.guru99.com/test/flash-testing.html
 ----------- Practice Challenges --------
-1. Broken Link Test
-2. Drag & Drop, Move slider
-3. Social Media message verification
-4. Individual field validation for a form using excel
-5. API Testing using RestAssured
+1. API Testing using RestAssured
+2. Broken Link Test
+3. Drag & Drop, Move slider
+4. Social Media message verification
+5. Individual field validation for a form using excel
 6. Visual Testing using Ocular
 7. Localization Test.
 8. Reporting using ReportPortal
-
+9. Extent Test Report (If possible)
 
 -------------- Links ----------------------
-https://github.com/vinsguru/ocular
-https://www.dynatrace.com/resources/ebooks/javabook/performance-in-continuous-integration/
+Ocular Visual Validation :
+
+- https://github.com/vinsguru/ocular
+- https://www.dynatrace.com/resources/ebooks/javabook/performance-in-continuous-integration/
+
+Pet Store Swagger API :
+
+- https://petstore.swagger.io/#/
+
+Demo Website :
+
+- http://demo.guru99.com/test/flash-testing.html
+
