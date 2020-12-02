@@ -32,7 +32,7 @@ public class ScreenshotUtility {
      * Take screenshot as ByteArrayInputStream
      *
      * @param driverObj <code>AppiumDriver</code>
-     * @return  <code>ByteArrayInputStream</code>
+     * @return <code>ByteArrayInputStream</code>
      */
     public ByteArrayInputStream takeScreenshotAsBase64AsInputByteArray(AppiumDriver<?> driverObj) {
         return new ByteArrayInputStream(((TakesScreenshot) driverObj).getScreenshotAs(OutputType.BASE64).getBytes());
@@ -42,7 +42,7 @@ public class ScreenshotUtility {
      * Take screenshot as ByteArrayInputStream
      *
      * @param driverObj <code>AppiumDriver</code>
-     * @return  <code>ByteArrayInputStream</code>
+     * @return <code>ByteArrayInputStream</code>
      */
     public byte[] takeScreenshotAsBase64ByteArray(AppiumDriver<?> driverObj) {
         return ((TakesScreenshot) driverObj).getScreenshotAs(OutputType.BYTES);
@@ -138,10 +138,10 @@ public class ScreenshotUtility {
      * To store File Object of screenshot on disk
      *
      * @param screenshotAsFile <code>File</code> <b>File type object of Screenshot</b>
-     * @param filePath <code>String</code> <b>Absolute file path with extension</b>
+     * @param filePath         <code>String</code> <b>Absolute file path with extension</b>
      * @return <code>boolean</code> <b>True if file created, false otherwise.</b>
      */
-    public boolean saveScreenShotFile(File screenshotAsFile,String filePath) {
+    public boolean saveScreenShotFile(File screenshotAsFile, String filePath) {
         boolean isFileCreated = false;
         try {
             File file = new File(filePath);
@@ -154,7 +154,7 @@ public class ScreenshotUtility {
             // Store screenshot
             FileUtils.copyFile(screenshotAsFile, file);
 
-            if(file.exists()) {
+            if (file.exists()) {
                 isFileCreated = true;
             }
 

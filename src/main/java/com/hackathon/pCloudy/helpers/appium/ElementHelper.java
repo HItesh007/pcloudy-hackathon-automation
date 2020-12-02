@@ -12,7 +12,7 @@ public class ElementHelper {
 
     public static ElementHelper getInstance() {
 
-        if(instance.get() == null) {
+        if (instance.get() == null) {
             instance.set(new ElementHelper());
         }
         return instance.get();

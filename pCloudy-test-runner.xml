@@ -3,7 +3,7 @@
 
 <suite name="pCloudy Hackathon - Test Suite" parallel="tests" thread-count="2">
     <listeners>
-        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener" />
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
     </listeners>
     <test name="pCloud - Test - MOTOROLA_Nexus6_Android_7.1.1">
         <parameter name="device-name" value="MOTOROLA_Nexus6_Android_7.1.1"/>
@@ -16,7 +16,7 @@
         <parameter name="wda-system-port" value="8201"/>
         <classes>
             <class name="com.hackathon.pCloudy.base.AppiumBase"/>
-            <class name="com.hackathon.pCloudy.tests.playground.CloudEnvironmentCheckTests" />
+            <class name="com.hackathon.pCloudy.tests.playground.CloudEnvironmentCheckTests"/>
         </classes>
     </test>
 
@@ -31,7 +31,7 @@
         <parameter name="wda-system-port" value="8202"/>
         <classes>
             <class name="com.hackathon.pCloudy.base.AppiumBase"/>
-            <class name="com.hackathon.pCloudy.tests.playground.CloudEnvironmentCheckTests" />
+            <class name="com.hackathon.pCloudy.tests.playground.CloudEnvironmentCheckTests"/>
         </classes>
     </test>
 </suite>

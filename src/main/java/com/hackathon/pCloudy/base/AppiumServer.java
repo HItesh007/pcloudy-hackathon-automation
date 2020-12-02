@@ -34,7 +34,7 @@ public class AppiumServer {
 
             File appiumServerFile = new File(appiumServerLogFileName);
 
-            if(!appiumServerFile.getParentFile().exists()) {
+            if (!appiumServerFile.getParentFile().exists()) {
                 appiumServerFile.getParentFile().mkdirs();
             }
 

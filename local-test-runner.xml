@@ -3,7 +3,7 @@
 
 <suite name="Hackathon - Local Test Suite" parallel="tests">
     <listeners>
-        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener" />
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
     </listeners>
     <test name="Hackathon Local Test - Moto G5s Plus">
         <parameter name="device-name" value="Moto G5s Plus"/>

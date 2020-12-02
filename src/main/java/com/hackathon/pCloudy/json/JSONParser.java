@@ -11,11 +11,12 @@ public class JSONParser {
 
     /**
      * Read JSON from A File Path As JSONObject
+     *
      * @param jsonFilePath String
      * @return JSONObject
      */
     public JSONObject parse(String jsonFilePath) {
-        try{
+        try {
             // Read Json File
             FileReader jsonFileReader = new FileReader(jsonFilePath);
 
@@ -31,6 +32,7 @@ public class JSONParser {
 
     /**
      * Read JSON From a File As JSONObject
+     *
      * @param jsonFileReader FileReader
      * @return JSONObject
      */
@@ -44,11 +46,12 @@ public class JSONParser {
 
     /**
      * Read JSON from A File Path as JSON String
+     *
      * @param jsonFilePath String
      * @return JSONObject
      */
     public String parseAsString(String jsonFilePath) {
-        try{
+        try {
             // Read Json File
             FileReader jsonFileReader = new FileReader(jsonFilePath);
 
@@ -64,6 +67,7 @@ public class JSONParser {
 
     /**
      * Read JSON From a File As String
+     *
      * @param jsonFileReader FileReader
      * @return String
      */

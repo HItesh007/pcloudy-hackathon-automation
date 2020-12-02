@@ -16,8 +16,8 @@ public class AppOptimizeHelper {
 
         dConf.getAllDeviceUDID().forEach(deviceId -> {
             packagesToOptimize.forEach(appPackage -> {
-                logger.info(cmd.runCommand("adb -s " + deviceId.trim() +" shell dumpsys deviceidle whitelist -" + appPackage));
-                logger.info( deviceId + " [" +appPackage + "] added for optimization");
+                logger.info(cmd.runCommand("adb -s " + deviceId.trim() + " shell dumpsys deviceidle whitelist -" + appPackage));
+                logger.info(deviceId + " [" + appPackage + "] added for optimization");
             });
         });
     }
@@ -28,8 +28,8 @@ public class AppOptimizeHelper {
 
         dConf.getAllDeviceUDID().forEach(deviceId -> {
             packagesToOptimize.forEach(appPackage -> {
-                logger.info(cmd.runCommand("adb -s " + deviceId.trim() +" shell dumpsys deviceidle whitelist +" + appPackage));
-                logger.info( deviceId + " [" +appPackage + "] removed from optimization");
+                logger.info(cmd.runCommand("adb -s " + deviceId.trim() + " shell dumpsys deviceidle whitelist +" + appPackage));
+                logger.info(deviceId + " [" + appPackage + "] removed from optimization");
             });
         });
     }
@@ -38,7 +38,7 @@ public class AppOptimizeHelper {
         CommandPrompt cmd = new CommandPrompt();
 
         packagesToOptimize.forEach(appPackage -> {
-            String cmdOutput = cmd.runCommand("adb -s " + deviceUdid.trim() +" shell dumpsys deviceidle whitelist +" + appPackage);
+            String cmdOutput = cmd.runCommand("adb -s " + deviceUdid.trim() + " shell dumpsys deviceidle whitelist +" + appPackage);
             String logMessage = "ADB Output : " + cmdOutput + ". [" + appPackage + "] removed from optimization.";
 
             logger.info(logMessage);
@@ -49,7 +49,7 @@ public class AppOptimizeHelper {
         CommandPrompt cmd = new CommandPrompt();
 
         packagesToOptimize.forEach(appPackage -> {
-            String cmdOutput = cmd.runCommand("adb -s " + deviceUdid.trim() +" shell dumpsys deviceidle whitelist -" + appPackage);
+            String cmdOutput = cmd.runCommand("adb -s " + deviceUdid.trim() + " shell dumpsys deviceidle whitelist -" + appPackage);
             String logMessage = "ADB Output : " + cmdOutput + ". [" + appPackage + "] added for optimization for device";
 
             logger.info(logMessage);

@@ -13,6 +13,7 @@ public class ADBHelper {
 
     /**
      * To Unlock the connected device using Device UDID
+     *
      * @param deviceUDID UDID of Android Device
      */
     public void unlockDevice(String deviceUDID) {
@@ -40,10 +41,10 @@ public class ADBHelper {
             boolean isDeviceAwake = adbResult.contains("mAwake=true");
             boolean isDeviceLocked = adbResult.contains("mShowingLockscreen=true");
 
-            if(isDeviceAwake && isDeviceLocked) {
+            if (isDeviceAwake && isDeviceLocked) {
                 // if isDeviceAwake = true & isDeviceLocked = true
                 cmd.runCommand(clickMenuBtn);
-            } else if(!isDeviceAwake && isDeviceLocked) {
+            } else if (!isDeviceAwake && isDeviceLocked) {
                 // if isDeviceAwake = false & isDeviceLocked = true
                 cmd.runCommand(wakeUpDevice + AND + clickMenuBtn);
             } else {

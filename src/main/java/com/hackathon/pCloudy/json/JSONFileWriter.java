@@ -15,6 +15,7 @@ public class JSONFileWriter {
 
     /**
      * Save a string as a json file
+     *
      * @param targetName
      * @param jsonText
      * @throws IOException
@@ -33,7 +34,7 @@ public class JSONFileWriter {
             BufferedWriter writer = Files.newBufferedWriter(path);
             writer.write(jsonText);
             writer.close();
-            System.out.println("Json file " + path.getFileName() +" written at Path : " + path.toString());
+            System.out.println("Json file " + path.getFileName() + " written at Path : " + path.toString());
         } catch (Exception ex) {
             ex.printStackTrace();
         }

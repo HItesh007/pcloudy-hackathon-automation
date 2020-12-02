@@ -5,7 +5,7 @@
     <test name="Hackathon - Chrome Test">
         <parameter name="browser-name" value="chrome"/>
         <classes>
-            <class name="com.hackathon.pCloudy.tests.challengeFive.ParallelSetup" />
+            <class name="com.hackathon.pCloudy.tests.challengeFive.ParallelSetup"/>
             <class name="com.hackathon.pCloudy.tests.challangeOne.ChallengeOneTests"/>
         </classes>
     </test>
@@ -13,7 +13,7 @@
     <test name="Hackathon - Firefox Test">
         <parameter name="browser-name" value="firefox"/>
         <classes>
-            <class name="com.hackathon.pCloudy.tests.challengeFive.ParallelSetup" />
+            <class name="com.hackathon.pCloudy.tests.challengeFive.ParallelSetup"/>
             <class name="com.hackathon.pCloudy.tests.challangeOne.ChallengeOneTests"/>
         </classes>
     </test>

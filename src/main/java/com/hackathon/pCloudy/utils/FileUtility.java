@@ -27,7 +27,7 @@ public class FileUtility {
         return null;
     }
 
-    public String byteToBase64String(byte [] byteArray) {
+    public String byteToBase64String(byte[] byteArray) {
         try {
             // Return base64 String
             return Base64Utils.encodeToString(byteArray);

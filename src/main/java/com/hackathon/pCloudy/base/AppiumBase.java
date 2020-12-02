@@ -31,7 +31,7 @@ public class AppiumBase {
     public void startAppiumServer() {
 
 
-        if(EnvironmentConstants.RUN_LOCALLY) {
+        if (EnvironmentConstants.RUN_LOCALLY) {
             // Build Appium Service
             ThreadAppiumServer
                     .setAppiumServerDriverService
@@ -93,7 +93,7 @@ public class AppiumBase {
                                     String aAutomationName, String aServerUrl, String aUDID, String aAppPackage, String aAppActivity, String aWdaSysPort) {
         try {
 
-            if(EnvironmentConstants.RUN_LOCALLY) {
+            if (EnvironmentConstants.RUN_LOCALLY) {
                 // Unlock Device If Locked
                 new ADBHelper().unlockDevice(aUDID);
 
@@ -140,7 +140,7 @@ public class AppiumBase {
 
             // How long (in seconds) Appium will wait for a new command from the client,
             // before assuming the client quit and ending the session
-            caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,600);
+            caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 600);
 
             // Do not stop app, do not clear app data, and do not uninstall apk.
             caps.setCapability(MobileCapabilityType.NO_RESET, false);
@@ -151,7 +151,7 @@ public class AppiumBase {
             /* Timeout in milliseconds used to wait for an uiAutomator2 server to launch.
              * Defaults to 20000
              */
-            if(aAutomationName.equalsIgnoreCase("UiAutomator2")) {
+            if (aAutomationName.equalsIgnoreCase("UiAutomator2")) {
                 caps.setCapability("appium:uiautomator2ServerLaunchTimeout", 300000);
             }
 
@@ -171,10 +171,10 @@ public class AppiumBase {
             caps.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
 
 
-            caps.setCapability(AndroidMobileCapabilityType.ADB_EXEC_TIMEOUT,120000);
+            caps.setCapability(AndroidMobileCapabilityType.ADB_EXEC_TIMEOUT, 120000);
 
             // Start Android Driver instance
-            if(EnvironmentConstants.RUN_LOCALLY) {
+            if (EnvironmentConstants.RUN_LOCALLY) {
                 ThreadLocalAppiumDriver.setDriver(new AndroidDriver<MobileElement>(new URL(aServerUrl), caps));
             } else {
                 ThreadLocalAppiumDriver.setDriver(new AndroidDriver<MobileElement>(new URL(EnvironmentConstants.P_CLOUDY_APPIUM_SERVER_URL), caps));
@@ -225,7 +225,7 @@ public class AppiumBase {
             // Hard wait for 5 second before closing the app
             Thread.sleep(5000);
 
-            if(ThreadLocalAppiumDriver.getDriver() != null) {
+            if (ThreadLocalAppiumDriver.getDriver() != null) {
 
                 // Close App Under Test
                 logger.info("Closing app under test...!!!");
@@ -244,12 +244,12 @@ public class AppiumBase {
 
     @AfterSuite(alwaysRun = true)
     public void stopAppiumServer() {
-        if(EnvironmentConstants.RUN_LOCALLY) {
+        if (EnvironmentConstants.RUN_LOCALLY) {
             try {
 
                 Thread.sleep(5000);
 
-                if(ThreadAppiumServer.getAppiumServerDriverService().isRunning()) {
+                if (ThreadAppiumServer.getAppiumServerDriverService().isRunning()) {
                     // Close appium server
                     ThreadAppiumServer.getAppiumServerDriverService().stop();
                 }

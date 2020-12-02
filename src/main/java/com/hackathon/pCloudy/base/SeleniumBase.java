@@ -23,10 +23,11 @@ public class SeleniumBase {
 
     /**
      * To get Object of <code>WebDriver</code>
+     *
      * @return <code>WebDriver</code>
      */
     public WebDriver getDriver() {
-        if(ThreadLocalSEDriver.getDriver() != null) {
+        if (ThreadLocalSEDriver.getDriver() != null) {
             return ThreadLocalSEDriver.getDriver();
         } else {
             throw new NullPointerException("Driver session is not created. Please call initBrowser() before calling getDriver()");
@@ -36,12 +37,12 @@ public class SeleniumBase {
     /**
      * To set Implicit wait for <code>WebDriver</code> instance.
      *
-     * @param time Time value in <code>long</code>
+     * @param time     Time value in <code>long</code>
      * @param timeUnit <code>TimeUnit</code>
      * @return <code>DriverFactory</code>
      */
     public SeleniumBase setImplicitTimeoutAs(long time, TimeUnit timeUnit) {
-        if(ThreadLocalSEDriver.getDriver() != null) {
+        if (ThreadLocalSEDriver.getDriver() != null) {
             ThreadLocalSEDriver.getDriver().manage().timeouts().implicitlyWait(time, timeUnit);
         } else {
             throw new NullPointerException("WebDriver instance is not created. Please call initBrowser() before setImplicitTimeout method");
@@ -52,12 +53,12 @@ public class SeleniumBase {
     /**
      * To set Asynchronous script to time out after specified time
      *
-     * @param time Timeout value in <code>long</code>
+     * @param time     Timeout value in <code>long</code>
      * @param timeUnit <code>TimeUnit</code> in Seconds, Milliseconds, minutes, hours etc.
      * @return <code>DriverFactory</code>
      */
     public SeleniumBase setScriptTimeoutAs(long time, TimeUnit timeUnit) {
-        if(ThreadLocalSEDriver.getDriver() != null) {
+        if (ThreadLocalSEDriver.getDriver() != null) {
             ThreadLocalSEDriver.getDriver().manage().timeouts().setScriptTimeout(time, timeUnit);
         } else {
             throw new NullPointerException("WebDriver instance is not created. Please call initBrowser() before setScriptTimeout method");
@@ -68,12 +69,12 @@ public class SeleniumBase {
     /**
      * To set page load timeout
      *
-     * @param time Timeout value in <code>long</code>
+     * @param time     Timeout value in <code>long</code>
      * @param timeUnit <code>TimeUnit</code> in Seconds, Milliseconds, minutes, hours etc.
      * @return <code>DriverFactory</code>
      */
     public SeleniumBase setPageLoadTimeoutAs(long time, TimeUnit timeUnit) {
-        if(ThreadLocalSEDriver.getDriver() != null) {
+        if (ThreadLocalSEDriver.getDriver() != null) {
             ThreadLocalSEDriver.getDriver().manage().timeouts().pageLoadTimeout(time, timeUnit);
         } else {
             throw new NullPointerException("WebDriver instance is not created. Please call initBrowser() before setPageLoadTimeout method");
@@ -88,7 +89,7 @@ public class SeleniumBase {
      * @param browser Browser to initialize of type <code>Browser</code>
      * @return <code>DriverFactory</code>
      */
-    public SeleniumBase initBrowser(Browser browser){
+    public SeleniumBase initBrowser(Browser browser) {
         switch (browser) {
             case IE:
                 WebDriverManager.iedriver().setup();
@@ -125,16 +126,15 @@ public class SeleniumBase {
 
     /**
      * To close the browser and clean the driver service.
-     *
      */
     public void closeBrowser() {
         try {
-            if(ThreadLocalSEDriver.getDriver() != null) {
+            if (ThreadLocalSEDriver.getDriver() != null) {
                 ThreadLocalSEDriver
                         .getDriver()
                         .close();
 
-                if(ThreadLocalSEDriver.getDriver() instanceof ChromeDriver) {
+                if (ThreadLocalSEDriver.getDriver() instanceof ChromeDriver) {
                     ThreadLocalSEDriver
                             .getDriver()
                             .quit();

@@ -11,18 +11,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 public class AppiumEventHelpers {
-    private static ThreadLocal<AppiumEventHelpers> instance = new ThreadLocal<>();
-
     private static final String actionBlockedId = "com.instagram.android:id/default_dialog_title";
     private static final String okButtonOnBlockedId = "com.instagram.android:id/negative_button";
     private static final String actionBlockedText = "Action Blocked";
+    private static ThreadLocal<AppiumEventHelpers> instance = new ThreadLocal<>();
 
     public AppiumEventHelpers() {
         // To Do
     }
 
     public static AppiumEventHelpers getInstance() {
-        if(instance.get() == null) {
+        if (instance.get() == null) {
             instance.set(new AppiumEventHelpers());
         }
         return instance.get();
@@ -52,25 +51,25 @@ public class AppiumEventHelpers {
     public void performKeyBoardEvent(KeyBoardEvent keyBoardEvent) {
 
         switch (keyBoardEvent) {
-                case ENTER:
-                    ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.ENTER));
-                    break;
+            case ENTER:
+                ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.ENTER));
+                break;
 
-                case LEFT_SHIFT:
-                    ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.SHIFT_LEFT));
-                    break;
+            case LEFT_SHIFT:
+                ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.SHIFT_LEFT));
+                break;
 
-                case RIGHT_SHIFT:
-                    ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.SHIFT_RIGHT));
-                    break;
+            case RIGHT_SHIFT:
+                ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.SHIFT_RIGHT));
+                break;
 
-                case LEFT_CTRL:
-                    ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.CTRL_LEFT));
-                    break;
+            case LEFT_CTRL:
+                ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.CTRL_LEFT));
+                break;
 
-                case RIGHT_CTRL:
-                    ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.CTRL_RIGHT));
-                    break;
+            case RIGHT_CTRL:
+                ThreadLocalAppiumDriver.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.CTRL_RIGHT));
+                break;
         }
 
     }
@@ -93,6 +92,18 @@ public class AppiumEventHelpers {
 
     }
 
+    public boolean isSessionActive() {
+        try {
+            String sessionID = ThreadLocalAppiumDriver.getDriver().getSessionId().toString();
+            if (sessionID.length() > 0) {
+                return true;
+            }
+        } catch (WebDriverException ex) {
+            return false;
+        }
+        return false;
+    }
+
     public enum KeyBoardEvent {
         SEARCH,
         ENTER,
@@ -100,17 +111,5 @@ public class AppiumEventHelpers {
         RIGHT_SHIFT,
         LEFT_CTRL,
         RIGHT_CTRL
-    }
-
-    public boolean isSessionActive() {
-        try {
-            String sessionID = ThreadLocalAppiumDriver.getDriver().getSessionId().toString();
-            if(sessionID.length() > 0) {
-                return true;
-            }
-        } catch (WebDriverException ex) {
-            return false;
-        }
-        return false;
     }
 }

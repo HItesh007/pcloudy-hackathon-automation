@@ -14,9 +14,9 @@ import java.util.Map;
  */
 public class DeviceConfiguration {
 
-    CommandPrompt cmd = new CommandPrompt();
-    LinkedHashMap<String,Map<String, String>> devices = new LinkedHashMap<>();
     private static final Logger logger = LogManager.getLogger(DeviceConfiguration.class.getName());
+    CommandPrompt cmd = new CommandPrompt();
+    LinkedHashMap<String, Map<String, String>> devices = new LinkedHashMap<>();
 
     /**
      * This method start adb server
@@ -24,11 +24,11 @@ public class DeviceConfiguration {
     private void startADB() {
         String output = cmd.runCommand("adb start-server");
         String[] lines = output.split("\n");
-        if(lines.length==1)
+        if (lines.length == 1)
             logger.info("adb service already started");
-        else if(lines[1].equalsIgnoreCase("* daemon started successfully *"))
+        else if (lines[1].equalsIgnoreCase("* daemon started successfully *"))
             logger.info("adb service started");
-        else if(lines[0].contains("internal or external command")){
+        else if (lines[0].contains("internal or external command")) {
             logger.info("adb path not set in system variable");
             System.exit(0);
         }
@@ -43,30 +43,31 @@ public class DeviceConfiguration {
 
     /**
      * This method return connected devices
+     *
      * @return hashmap of connected devices information
      */
-    public LinkedHashMap<String,Map<String, String>> getDevices() {
+    public LinkedHashMap<String, Map<String, String>> getDevices() {
 
         try {
             startADB(); // start adb service
             String output = cmd.runCommand("adb devices");
             String[] lines = output.split("\n");
 
-            if(lines.length<=1){
+            if (lines.length <= 1) {
                 logger.info("No Device Connected");
                 //stopADB();
-                System.exit(0);	// exit if no connected devices found
+                System.exit(0);    // exit if no connected devices found
             }
 
-            for(int i=1;i<lines.length;i++){
-                lines[i]=lines[i].replaceAll("\\s+", "");
+            for (int i = 1; i < lines.length; i++) {
+                lines[i] = lines[i].replaceAll("\\s+", "");
 
-                if(lines[i].contains("device")){
-                    lines[i]=lines[i].replaceAll("device", "");
+                if (lines[i].contains("device")) {
+                    lines[i] = lines[i].replaceAll("device", "");
                     String deviceID = lines[i];
-                    String deviceModel = cmd.runCommand("adb -s "+deviceID+" shell getprop ro.product.model").trim();
+                    String deviceModel = cmd.runCommand("adb -s " + deviceID + " shell getprop ro.product.model").trim();
                     //String brand = cmd.runCommand("adb -s "+deviceID+" shell getprop ro.product.brand").replaceAll("\\s+", "");
-                    String osVersion = cmd.runCommand("adb -s "+deviceID+" shell getprop ro.build.version.release").replaceAll("\\s+", "");
+                    String osVersion = cmd.runCommand("adb -s " + deviceID + " shell getprop ro.build.version.release").replaceAll("\\s+", "");
 
                     Map<String, String> deviceMap = new LinkedHashMap<>();
                     deviceMap.put(DeviceProperty.DEVICE_ID.toString(), deviceID);
@@ -83,19 +84,19 @@ public class DeviceConfiguration {
                     devices.put("PLATFORM_VERSION"+i, osVersion);*/
 
                     logger.info("Following device is connected");
-                    logger.info(deviceID+" "+deviceModel+" "+osVersion+"\n");
-                }else if(lines[i].contains("unauthorized")){
-                    lines[i]=lines[i].replaceAll("unauthorized", "");
+                    logger.info(deviceID + " " + deviceModel + " " + osVersion + "\n");
+                } else if (lines[i].contains("unauthorized")) {
+                    lines[i] = lines[i].replaceAll("unauthorized", "");
                     String deviceID = lines[i];
 
                     logger.warn("Following device is unauthorized");
-                    logger.warn(deviceID+"\n");
-                }else if(lines[i].contains("offline")){
-                    lines[i]=lines[i].replaceAll("offline", "");
+                    logger.warn(deviceID + "\n");
+                } else if (lines[i].contains("offline")) {
+                    lines[i] = lines[i].replaceAll("offline", "");
                     String deviceID = lines[i];
 
                     logger.error("Following device is offline");
-                    logger.error(deviceID+"\n");
+                    logger.error(deviceID + "\n");
                 }
             }
         } catch (Exception ex) {

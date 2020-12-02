@@ -82,7 +82,7 @@ public class CPSatExamHomePage {
                     break;
                 }
             }
-        } catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 

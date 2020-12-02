@@ -36,7 +36,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="com.hackathon.pCloudy" level="debug" additivity="false">
+        <Logger name="com.hackathon" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="ReportPortalAppender"/>
             <!--<AppenderRef ref="RollingFile"/>-->

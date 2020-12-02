@@ -15,32 +15,32 @@ public class ParallelSetup {
     @Parameters({"browser-name"})
     public void initBrowsers(String browserName) {
 
-            switch (browserName.trim().toUpperCase()) {
-                case "FIREFOX":
-                    WebDriverManager.firefoxdriver().setup();
-                    ThreadLocalSEDriver
-                            .setDriver(new FirefoxDriver());
-                    break;
-                default:
-                    WebDriverManager.chromedriver().setup();
-                    ThreadLocalSEDriver
-                            .setDriver(new ChromeDriver());
-                    break;
-            }
+        switch (browserName.trim().toUpperCase()) {
+            case "FIREFOX":
+                WebDriverManager.firefoxdriver().setup();
+                ThreadLocalSEDriver
+                        .setDriver(new FirefoxDriver());
+                break;
+            default:
+                WebDriverManager.chromedriver().setup();
+                ThreadLocalSEDriver
+                        .setDriver(new ChromeDriver());
+                break;
+        }
 
-            // Maximize browser
-            ThreadLocalSEDriver.getDriver().manage().window().maximize();
+        // Maximize browser
+        ThreadLocalSEDriver.getDriver().manage().window().maximize();
     }
 
     @AfterTest
     public void closeBrowser() {
         try {
-            if(ThreadLocalSEDriver.getDriver() != null) {
+            if (ThreadLocalSEDriver.getDriver() != null) {
                 ThreadLocalSEDriver
                         .getDriver()
                         .close();
 
-                if(ThreadLocalSEDriver.getDriver() instanceof ChromeDriver) {
+                if (ThreadLocalSEDriver.getDriver() instanceof ChromeDriver) {
                     ThreadLocalSEDriver
                             .getDriver()
                             .quit();

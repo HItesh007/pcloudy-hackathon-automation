@@ -46,7 +46,7 @@ public class ApiChallengeTests {
 
             Assert.assertEquals(apiResponse.getStatusCode(), 200);
         } catch (Exception ex) {
-            logger.error(ex.getMessage(),ex);
+            logger.error(ex.getMessage(), ex);
         }
     }
 
@@ -135,7 +135,7 @@ public class ApiChallengeTests {
             //endregion
 
         } catch (Exception ex) {
-            logger.error(ex.getMessage(),ex);
+            logger.error(ex.getMessage(), ex);
         }
     }
 
@@ -191,8 +191,8 @@ public class ApiChallengeTests {
                     .findElements(By.tagName("td"));
 
             // Verify the id
-            for (WebElement ele: idElements) {
-                if(ele.getText().equalsIgnoreCase(String.valueOf(primaryKey))) {
+            for (WebElement ele : idElements) {
+                if (ele.getText().equalsIgnoreCase(String.valueOf(primaryKey))) {
                     System.out.println("Record with ID : " + primaryKey + " has been found on Web");
                     break;
                 }
@@ -218,8 +218,8 @@ public class ApiChallengeTests {
 
             boolean isFound = false;
             // Verify the id
-            for (WebElement ele: idElementsAfterDelete) {
-                if(ele.getText().equalsIgnoreCase(String.valueOf(primaryKey))) {
+            for (WebElement ele : idElementsAfterDelete) {
+                if (ele.getText().equalsIgnoreCase(String.valueOf(primaryKey))) {
                     isFound = true;
                     break;
                 }

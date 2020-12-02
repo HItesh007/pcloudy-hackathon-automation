@@ -14,7 +14,7 @@ public class JFairyHelper {
 
         Person person = null;
 
-        if(gender == Gender.Male) {
+        if (gender == Gender.Male) {
             person = jFairy.person(PersonProperties.male());
         } else if (gender == Gender.Female) {
             person = jFairy.person(PersonProperties.female());
@@ -28,7 +28,7 @@ public class JFairyHelper {
 
         Person person = null;
 
-        if(gender == Gender.Male) {
+        if (gender == Gender.Male) {
             person = jFairy.person(PersonProperties.male());
         } else if (gender == Gender.Female) {
             person = jFairy.person(PersonProperties.female());
@@ -42,7 +42,7 @@ public class JFairyHelper {
 
         Person person = null;
 
-        if(gender == Gender.Male) {
+        if (gender == Gender.Male) {
             person = jFairy.person(PersonProperties.male());
         } else if (gender == Gender.Female) {
             person = jFairy.person(PersonProperties.female());

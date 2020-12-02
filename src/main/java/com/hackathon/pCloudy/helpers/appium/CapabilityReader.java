@@ -7,15 +7,15 @@ public class CapabilityReader {
 
     private static ThreadLocal<CapabilityReader> instance = new ThreadLocal<>();
 
-    public static CapabilityReader getInstance(){
-        if(instance.get() == null) {
+    private CapabilityReader() {
+        // To Do
+    }
+
+    public static CapabilityReader getInstance() {
+        if (instance.get() == null) {
             instance.set(new CapabilityReader());
         }
         return instance.get();
-    }
-
-    private CapabilityReader() {
-        // To Do
     }
 
     public String getDeviceModel() {
@@ -44,6 +44,7 @@ public class CapabilityReader {
 
     /**
      * To get full device name
+     *
      * @return Full Device Name in format DEVICE_MODEL (UDID)
      */
     public String getFullDeviceName() {

@@ -12,7 +12,6 @@ public class JSONMerger {
      * if they are objects, otherwise replaced by the latest occurence.
      *
      * @param listOfJsonObject JSONObjects to merge.
-     *
      * @return Merged JSONObject.
      */
     public JSONObject mergeAndOverwriteJsonObjectOnSimilarKeys(List<JSONObject> listOfJsonObject) {
@@ -57,6 +56,7 @@ public class JSONMerger {
     /**
      * Merges given JSONObjects. Values for identical key names are merged
      * if they are objects.
+     *
      * @param listOfJsonObject
      * @return
      */
@@ -80,7 +80,7 @@ public class JSONMerger {
                                     Arrays.asList(new JSONObject[]{
                                             (JSONObject) merged.get(key),
                                             (JSONObject) added.get(key)}));
-                        } else if(added.get(key) instanceof JSONArray) {
+                        } else if (added.get(key) instanceof JSONArray) {
                             added.getJSONArray(key).forEach(rowInArray -> {
                                 merged.getJSONArray(key).put(rowInArray);
                             });
@@ -106,7 +106,6 @@ public class JSONMerger {
      * Convert JSONArray to ArrayList<String>.
      *
      * @param jsonArray Source JSONArray.
-     *
      * @return Target ArrayList<String>.
      */
     private ArrayList<String> toStringArrayList(JSONArray jsonArray) {

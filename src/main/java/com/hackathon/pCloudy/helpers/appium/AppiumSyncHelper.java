@@ -1,4 +1,5 @@
 package com.hackathon.pCloudy.helpers.appium;
+
 import com.hackathon.pCloudy.thread.ThreadLocalAppiumDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
