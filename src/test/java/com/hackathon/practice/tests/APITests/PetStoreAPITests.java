@@ -93,13 +93,13 @@ public class PetStoreAPITests {
                 .contentType(ContentType.JSON)
                 .when()
                 .body(pet.toString())
-                .post("/pet/" + petID)
+                .post("/pet/")
                 .then()
                 .extract()
                 .response();
 
         // Pet added successfully. Get ID
-        String petName = new JSONObject(postResponse.asString()).getString("name");
+        String petName = new JSONObject(updatePost.asString()).getString("name");
         logger.info("Updated JSON : " + updatePost.asString());
         Assert.assertEquals(petName, updatePetName);
     }
