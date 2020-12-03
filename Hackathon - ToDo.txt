@@ -9,7 +9,7 @@
 8. Appium
 
 ----------- Practice Challenges --------
-1. API Testing using RestAssured
+1. API Testing using RestAssured (DONE)
 2. Broken Link Test
 3. Drag & Drop, Move slider
 4. Social Media message verification
