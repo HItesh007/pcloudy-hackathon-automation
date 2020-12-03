@@ -1,4 +1,4 @@
-package com.hackathon.practice.tests.APITests;
+package com.hackathon.practice.tests.API;
 
 import com.github.javafaker.Faker;
 import com.hackathon.pCloudy.json.JSONArray;
